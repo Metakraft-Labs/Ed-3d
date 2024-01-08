@@ -1,6 +1,5 @@
-export default {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
-}
+import { defineConfig } from "vite-plugin-windicss";
+
+export default defineConfig({
+  plugins: [require("tailwindcss"), require("autoprefixer")],
+});
