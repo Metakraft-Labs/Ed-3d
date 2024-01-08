@@ -1,3 +1,4 @@
+import React from "react";
 import slide4 from "./assets/slide4.jpeg";
 import slide5 from "./assets/slide5.jpeg";
 import slide6 from "./assets/slide6.jpeg";
@@ -23,26 +24,21 @@ import slide29 from "./assets/slide29.jpeg";
 import slide30 from "./assets/slide30.jpeg";
 import slide31 from "./assets/slide31.jpeg";
 import slide32 from "./assets/slide32.jpeg";
-// import slide3 from "./assets/slide3.glb";
+import { Stats, OrbitControls, Circle } from "@react-three/drei";
+import { Canvas, useLoader } from "@react-three/fiber";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader";
+import slide2 from "./assets/slide2.glb";
+import slide3 from "./assets/slide3.glb";
+import slide7 from "./assets/slide7.glb";
+import slide12 from "./assets/slide12.glb";
+
 import { styles } from "./styles";
 
-import React, { useEffect } from 'react'; // Import useEffect from React
-// import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-// import { useThree } from '@react-three/fiber';
-
-// const GltfModel = () => {
-//   const { scene } = useThree();
-//   useEffect(() => {
-//     const loader = new GLTFLoader();
-//     loader.load(slide3, function (gltf) {
-//       scene.add(gltf.scene);
-//     }, undefined, function (error) {
-//       console.error(error);
-//     });
-//   }, [scene]); 
-
-//   return null; 
-// };
+const gltf1 = useLoader(GLTFLoader, slide2);
+const gltf2 = useLoader(GLTFLoader, slide3);
+const gltf3 = useLoader(GLTFLoader, slide7);
+const gltf4 = useLoader(GLTFLoader, slide12);
+const gltf5 = useLoader(GLTFLoader, slide12);
 
 export const data = [
   {
@@ -71,36 +67,63 @@ export const data = [
     id: 2,
     label: "Location of Digestive System in Human Body",
     slide: (
-      <div className="sketchfab-embed-wrapper absolute top-0  w-full">
-        <iframe
-          title="Digestive System 2"
-          frameBorder="0"
-          allowFullScreen
-          mozAllowFullScreen="true"
-          webkitAllowFullScreen="true"
-          allow="autoplay; fullscreen; xr-spatial-tracking"
-          xr-spatial-tracking
-          execution-while-out-of-viewport
-          execution-while-not-rendered
-          web-share
-          width="640"
-          height="580"
-          src="https://sketchfab.com/models/6e072566838d4797a10b849cce737f3a/embed"
-        />
-      </div>
+      <>
+        <Canvas
+          camera={{ position: [-0.5, 1, 2] }}
+          shadows
+          style={{ height: "600px" }}
+        >
+          <directionalLight
+            position={[3.3, 1.0, 4.4]}
+            castShadow
+            intensity={Math.PI * 2}
+          />
+          <primitive
+            object={gltf1.scene}
+            position={[0, 1, 0]}
+            children-0-castShadow
+          />
+          <Circle args={[10]} rotation-x={-Math.PI / 2} receiveShadow>
+            <meshStandardMaterial />
+          </Circle>
+          <OrbitControls target={[0, 1, 0]} />
+          <axesHelper args={[5]} />
+          <Stats />
+        </Canvas>
+      </>
     ),
   },
 
-  // {
-  //   id: 3,
-  //   label: "Human Digestive System",
-  //   slide: (
-  //     <div>
-  //       <GltfModel />
-  //     </div>
-  //   ),
-  // },
-  
+  {
+    id: 3,
+    label: "Human Digestive System",
+    slide: (
+      <div>
+        <Canvas
+          camera={{ position: [-0.5, 1, 2] }}
+          shadows
+          style={{ height: "600px" }}
+        >
+          <directionalLight
+            position={[3.3, 1.0, 4.4]}
+            castShadow
+            intensity={Math.PI * 2}
+          />
+          <primitive
+            object={gltf2.scene}
+            position={[0, 1, 0]}
+            children-0-castShadow
+          />
+          <Circle args={[10]} rotation-x={-Math.PI / 2} receiveShadow>
+            <meshStandardMaterial />
+          </Circle>
+          <OrbitControls target={[0, 1, 0]} />
+          <axesHelper args={[5]} />
+          <Stats />
+        </Canvas>
+      </div>
+    ),
+  },
 
   {
     id: 4,
@@ -121,23 +144,30 @@ export const data = [
     id: 7,
     label: "Human Teeth",
     slide: (
-      <div className="sketchfab-embed-wrapper absolute top-0 w-full">
-        <iframe
-          title="Human Teeth"
-          frameBorder="0"
-          allowFullScreen
-          mozAllowFullScreen="true"
-          webkitAllowFullScreen="true"
-          allow="autoplay; fullscreen; xr-spatial-tracking"
-          xr-spatial-tracking
-          execution-while-out-of-viewport
-          execution-while-not-rendered
-          web-share
-          width="640"
-          height="5800"
-          src="https://sketchfab.com/models/768c0ac4f5864e0a9d9fea3296f468fe/embed"
-        />
-      </div>
+      <>
+        <Canvas
+          camera={{ position: [-0.5, 1, 2] }}
+          shadows
+          style={{ height: "600px" }}
+        >
+          <directionalLight
+            position={[3.3, 1.0, 4.4]}
+            castShadow
+            intensity={Math.PI * 2}
+          />
+          <primitive
+            object={gltf3.scene}
+            position={[0, 1, 0]}
+            children-0-castShadow
+          />
+          <Circle args={[10]} rotation-x={-Math.PI / 2} receiveShadow>
+            <meshStandardMaterial />
+          </Circle>
+          <OrbitControls target={[0, 1, 0]} />
+          <axesHelper args={[5]} />
+          <Stats />
+        </Canvas>
+      </>
     ),
   },
   {
@@ -164,23 +194,30 @@ export const data = [
     id: 12,
     label: "Tooth Cross Section",
     slide: (
-      <div className="sketchfab-embed-wrapper absolute top-0 w-full">
-        <iframe
-          title="Molar Tooth"
-          frameBorder="0"
-          allowFullScreen
-          mozAllowFullScreen="true"
-          webkitAllowFullScreen="true"
-          allow="autoplay; fullscreen; xr-spatial-tracking"
-          xr-spatial-tracking
-          execution-while-out-of-viewport
-          execution-while-not-rendered
-          web-share
-          width="640"
-          height="5800"
-          src="https://sketchfab.com/models/54376b4e2c3b4091aedaa12d94e15076/embed"
-        />
-      </div>
+      <>
+        <Canvas
+          camera={{ position: [-0.5, 1, 2] }}
+          shadows
+          style={{ height: "600px" }}
+        >
+          <directionalLight
+            position={[3.3, 1.0, 4.4]}
+            castShadow
+            intensity={Math.PI * 2}
+          />
+          <primitive
+            object={gltf4.scene}
+            position={[0, 1, 0]}
+            children-0-castShadow
+          />
+          <Circle args={[10]} rotation-x={-Math.PI / 2} receiveShadow>
+            <meshStandardMaterial />
+          </Circle>
+          <OrbitControls target={[0, 1, 0]} />
+          <axesHelper args={[5]} />
+          <Stats />
+        </Canvas>
+      </>
     ),
   },
   {
@@ -242,23 +279,30 @@ export const data = [
     id: 24,
     label: "Villi Cross Section",
     slide: (
-      <div className="sketchfab-embed-wrapper absolute top-0 w-full">
-        <iframe
-          title="section of villus"
-          frameBorder="0"
-          allowFullScreen
-          mozAllowFullScreen="true"
-          webkitAllowFullScreen="true"
-          allow="autoplay; fullscreen; xr-spatial-tracking"
-          xr-spatial-tracking
-          execution-while-out-of-viewport
-          execution-while-not-rendered
-          web-share
-          width="640"
-          height="580"
-          src="https://sketchfab.com/models/9ceaa32240a646f7ae86b84396dbeab1/embed"
-        />
-      </div>
+      <>
+        <Canvas
+          camera={{ position: [-0.5, 1, 2] }}
+          shadows
+          style={{ height: "600px" }}
+        >
+          <directionalLight
+            position={[3.3, 1.0, 4.4]}
+            castShadow
+            intensity={Math.PI * 2}
+          />
+          <primitive
+            object={gltf5.scene}
+            position={[0, 1, 0]}
+            children-0-castShadow
+          />
+          <Circle args={[10]} rotation-x={-Math.PI / 2} receiveShadow>
+            <meshStandardMaterial />
+          </Circle>
+          <OrbitControls target={[0, 1, 0]} />
+          <axesHelper args={[5]} />
+          <Stats />
+        </Canvas>
+      </>
     ),
   },
   {
