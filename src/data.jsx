@@ -23,7 +23,26 @@ import slide29 from "./assets/slide29.jpeg";
 import slide30 from "./assets/slide30.jpeg";
 import slide31 from "./assets/slide31.jpeg";
 import slide32 from "./assets/slide32.jpeg";
+// import slide3 from "./assets/slide3.glb";
 import { styles } from "./styles";
+
+import React, { useEffect } from 'react'; // Import useEffect from React
+// import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+// import { useThree } from '@react-three/fiber';
+
+// const GltfModel = () => {
+//   const { scene } = useThree();
+//   useEffect(() => {
+//     const loader = new GLTFLoader();
+//     loader.load(slide3, function (gltf) {
+//       scene.add(gltf.scene);
+//     }, undefined, function (error) {
+//       console.error(error);
+//     });
+//   }, [scene]); 
+
+//   return null; 
+// };
 
 export const data = [
   {
@@ -41,7 +60,7 @@ export const data = [
         >
           <h2 className={`${styles.head1} `}>Biology</h2>
           <h1 className={`${styles.head2} m-[2rem]`}>
-            Detailed Study of Alimentary <br/> canal: Human Digestive System
+            Detailed Study of Alimentary <br /> canal: Human Digestive System
           </h1>
           <p className={`${styles.text1}`}>Grade 11th</p>
         </div>
@@ -50,160 +69,236 @@ export const data = [
   },
   {
     id: 2,
-    label: "DIGESTIVE SYSTEM - 2",
-    slide: <img src={slide4} className={`${styles.slides}`} alt="Slide 4" />,
+    label: "Location of Digestive System in Human Body",
+    slide: (
+      <div className="sketchfab-embed-wrapper absolute top-0  w-full">
+        <iframe
+          title="Digestive System 2"
+          frameBorder="0"
+          allowFullScreen
+          mozAllowFullScreen="true"
+          webkitAllowFullScreen="true"
+          allow="autoplay; fullscreen; xr-spatial-tracking"
+          xr-spatial-tracking
+          execution-while-out-of-viewport
+          execution-while-not-rendered
+          web-share
+          width="640"
+          height="580"
+          src="https://sketchfab.com/models/6e072566838d4797a10b849cce737f3a/embed"
+        />
+      </div>
+    ),
   },
-  {
-    id: 3,
-    label: "DIGESTIVE SYSTEM - 3",
-    slide: <img src={slide4} className={`${styles.slides}`} alt="Slide 4" />,
-  },
+
+  // {
+  //   id: 3,
+  //   label: "Human Digestive System",
+  //   slide: (
+  //     <div>
+  //       <GltfModel />
+  //     </div>
+  //   ),
+  // },
+  
+
   {
     id: 4,
     label: "DIGESTIVE SYSTEM - 4",
     slide: <img src={slide4} className={`${styles.slides}`} alt="Slide 4" />,
   },
-    // ... previous slides
-
-    {
-      id: 5,
-      label: "DIGESTIVE SYSTEM - 5",
-      slide: <img src={slide5} className={`${styles.slides}`} alt="Slide 5" />,
-    },
-    {
-      id: 6,
-      label: "DIGESTIVE SYSTEM - 6",
-      slide: <img src={slide6} className={`${styles.slides}`} alt="Slide 6" />,
-    },
-    {
-      id: 7,
-      label: "DIGESTIVE SYSTEM - 7",
-      slide: <img src={slide8} className={`${styles.slides}`} alt="Slide 8" />,
-    },
-    {
-      id: 8,
-      label: "DIGESTIVE SYSTEM - 8",
-      slide: <img src={slide8} className={`${styles.slides}`} alt="Slide 8" />,
-    },
-    {
-      id: 9,
-      label: "DIGESTIVE SYSTEM - 9",
-      slide: <img src={slide9} className={`${styles.slides}`} alt="Slide 9" />,
-    },
-    {
-      id: 10,
-      label: "DIGESTIVE SYSTEM - 10",
-      slide: <img src={slide10} className={`${styles.slides}`} alt="Slide 10" />,
-    },
-    {
-      id: 11,
-      label: "DIGESTIVE SYSTEM - 11",
-      slide: <img src={slide11} className={`${styles.slides}`} alt="Slide 11" />,
-    },
-    {
-      id: 12,
-      label: "DIGESTIVE SYSTEM - 12",
-      slide: <img src={slide11} className={`${styles.slides}`} alt="Slide 11" />,
-    },
-    {
-      id: 13,
-      label: "DIGESTIVE SYSTEM - 13",
-      slide: <img src={slide13} className={`${styles.slides}`} alt="Slide 13" />,
-    },
-    {
-      id: 14,
-      label: "DIGESTIVE SYSTEM - 14",
-      slide: <img src={slide14} className={`${styles.slides}`} alt="Slide 14" />,
-    },
-    {
-      id: 15,
-      label: "DIGESTIVE SYSTEM - 15",
-      slide: <img src={slide15} className={`${styles.slides}`} alt="Slide 15" />,
-    },
-    {
-      id: 16,
-      label: "DIGESTIVE SYSTEM - 16",
-      slide: <img src={slide16} className={`${styles.slides}`} alt="Slide 16" />,
-    },
-    {
-      id: 17,
-      label: "DIGESTIVE SYSTEM - 17",
-      slide: <img src={slide17} className={`${styles.slides}`} alt="Slide 17" />,
-    },
-    {
-      id: 18,
-      label: "DIGESTIVE SYSTEM - 18",
-      slide: <img src={slide17} className={`${styles.slides}`} alt="Slide 17" />,
-    },
-    {
-      id: 19,
-      label: "DIGESTIVE SYSTEM - 19",
-      slide: <img src={slide19} className={`${styles.slides}`} alt="Slide 19" />,
-    },
-    {
-      id: 20,
-      label: "DIGESTIVE SYSTEM - 20",
-      slide: <img src={slide20} className={`${styles.slides}`} alt="Slide 20" />,
-    },
-    {
-      id: 21,
-      label: "DIGESTIVE SYSTEM - 21",
-      slide: <img src={slide21} className={`${styles.slides}`} alt="Slide 21" />,
-    },
-    {
-      id: 22,
-      label: "DIGESTIVE SYSTEM - 22",
-      slide: <img src={slide22} className={`${styles.slides}`} alt="Slide 22" />,
-    },
-    {
-      id: 23,
-      label: "DIGESTIVE SYSTEM - 23",
-      slide: <img src={slide23} className={`${styles.slides}`} alt="Slide 23" />,
-    },
-    {
-      id: 24,
-      label: "DIGESTIVE SYSTEM - 24",
-      slide: <img src={slide23} className={`${styles.slides}`} alt="Slide 23" />,
-    },
-    {
-      id: 25,
-      label: "DIGESTIVE SYSTEM - 25",
-      slide: <img src={slide25} className={`${styles.slides}`} alt="Slide 25" />,
-    },
-    {
-      id: 26,
-      label: "DIGESTIVE SYSTEM - 26",
-      slide: <img src={slide26} className={`${styles.slides}`} alt="Slide 26" />,
-    },
-    {
-      id: 27,
-      label: "DIGESTIVE SYSTEM - 27",
-      slide: <img src={slide27} className={`${styles.slides}`} alt="Slide 27" />,
-    },
-    {
-      id: 28,
-      label: "DIGESTIVE SYSTEM - 28",
-      slide: <img src={slide28} className={`${styles.slides}`} alt="Slide 28" />,
-    },
-    {
-      id: 29,
-      label: "DIGESTIVE SYSTEM - 29",
-      slide: <img src={slide29} className={`${styles.slides}`} alt="Slide 29" />,
-    },
-    {
-      id: 30,
-      label: "DIGESTIVE SYSTEM - 30",
-      slide: <img src={slide30} className={`${styles.slides}`} alt="Slide 30" />,
-    },
-    {
-      id: 31,
-      label: "DIGESTIVE SYSTEM - 31",
-      slide: <img src={slide31} className={`${styles.slides}`} alt="Slide 31" />,
-    },
-    {
-      id: 32,
-      label: "DIGESTIVE SYSTEM - 32",
-      slide: <img src={slide32} className={`${styles.slides}`} alt="Slide 32" />,
-    },
-  ];
-  
+  {
+    id: 5,
+    label: "DIGESTIVE SYSTEM - 5",
+    slide: <img src={slide5} className={`${styles.slides}`} alt="Slide 5" />,
+  },
+  {
+    id: 6,
+    label: "DIGESTIVE SYSTEM - 6",
+    slide: <img src={slide6} className={`${styles.slides}`} alt="Slide 6" />,
+  },
+  {
+    id: 7,
+    label: "Human Teeth",
+    slide: (
+      <div className="sketchfab-embed-wrapper absolute top-0 w-full">
+        <iframe
+          title="Human Teeth"
+          frameBorder="0"
+          allowFullScreen
+          mozAllowFullScreen="true"
+          webkitAllowFullScreen="true"
+          allow="autoplay; fullscreen; xr-spatial-tracking"
+          xr-spatial-tracking
+          execution-while-out-of-viewport
+          execution-while-not-rendered
+          web-share
+          width="640"
+          height="5800"
+          src="https://sketchfab.com/models/768c0ac4f5864e0a9d9fea3296f468fe/embed"
+        />
+      </div>
+    ),
+  },
+  {
+    id: 8,
+    label: "DIGESTIVE SYSTEM - 8",
+    slide: <img src={slide8} className={`${styles.slides}`} alt="Slide 8" />,
+  },
+  {
+    id: 9,
+    label: "DIGESTIVE SYSTEM - 9",
+    slide: <img src={slide9} className={`${styles.slides}`} alt="Slide 9" />,
+  },
+  {
+    id: 10,
+    label: "DIGESTIVE SYSTEM - 10",
+    slide: <img src={slide10} className={`${styles.slides}`} alt="Slide 10" />,
+  },
+  {
+    id: 11,
+    label: "DIGESTIVE SYSTEM - 11",
+    slide: <img src={slide11} className={`${styles.slides}`} alt="Slide 11" />,
+  },
+  {
+    id: 12,
+    label: "Tooth Cross Section",
+    slide: (
+      <div className="sketchfab-embed-wrapper absolute top-0 w-full">
+        <iframe
+          title="Molar Tooth"
+          frameBorder="0"
+          allowFullScreen
+          mozAllowFullScreen="true"
+          webkitAllowFullScreen="true"
+          allow="autoplay; fullscreen; xr-spatial-tracking"
+          xr-spatial-tracking
+          execution-while-out-of-viewport
+          execution-while-not-rendered
+          web-share
+          width="640"
+          height="5800"
+          src="https://sketchfab.com/models/54376b4e2c3b4091aedaa12d94e15076/embed"
+        />
+      </div>
+    ),
+  },
+  {
+    id: 13,
+    label: "DIGESTIVE SYSTEM - 13",
+    slide: <img src={slide13} className={`${styles.slides}`} alt="Slide 13" />,
+  },
+  {
+    id: 14,
+    label: "DIGESTIVE SYSTEM - 14",
+    slide: <img src={slide14} className={`${styles.slides}`} alt="Slide 14" />,
+  },
+  {
+    id: 15,
+    label: "DIGESTIVE SYSTEM - 15",
+    slide: <img src={slide15} className={`${styles.slides}`} alt="Slide 15" />,
+  },
+  {
+    id: 16,
+    label: "DIGESTIVE SYSTEM - 16",
+    slide: <img src={slide16} className={`${styles.slides}`} alt="Slide 16" />,
+  },
+  {
+    id: 17,
+    label: "DIGESTIVE SYSTEM - 17",
+    slide: <img src={slide17} className={`${styles.slides}`} alt="Slide 17" />,
+  },
+  {
+    id: 18,
+    label: "DIGESTIVE SYSTEM - 18",
+    slide: <img src={slide17} className={`${styles.slides}`} alt="Slide 17" />,
+  },
+  {
+    id: 19,
+    label: "DIGESTIVE SYSTEM - 19",
+    slide: <img src={slide19} className={`${styles.slides}`} alt="Slide 19" />,
+  },
+  {
+    id: 20,
+    label: "DIGESTIVE SYSTEM - 20",
+    slide: <img src={slide20} className={`${styles.slides}`} alt="Slide 20" />,
+  },
+  {
+    id: 21,
+    label: "DIGESTIVE SYSTEM - 21",
+    slide: <img src={slide21} className={`${styles.slides}`} alt="Slide 21" />,
+  },
+  {
+    id: 22,
+    label: "DIGESTIVE SYSTEM - 22",
+    slide: <img src={slide22} className={`${styles.slides}`} alt="Slide 22" />,
+  },
+  {
+    id: 23,
+    label: "DIGESTIVE SYSTEM - 23",
+    slide: <img src={slide23} className={`${styles.slides}`} alt="Slide 23" />,
+  },
+  {
+    id: 24,
+    label: "Villi Cross Section",
+    slide: (
+      <div className="sketchfab-embed-wrapper absolute top-0 w-full">
+        <iframe
+          title="section of villus"
+          frameBorder="0"
+          allowFullScreen
+          mozAllowFullScreen="true"
+          webkitAllowFullScreen="true"
+          allow="autoplay; fullscreen; xr-spatial-tracking"
+          xr-spatial-tracking
+          execution-while-out-of-viewport
+          execution-while-not-rendered
+          web-share
+          width="640"
+          height="580"
+          src="https://sketchfab.com/models/9ceaa32240a646f7ae86b84396dbeab1/embed"
+        />
+      </div>
+    ),
+  },
+  {
+    id: 25,
+    label: "DIGESTIVE SYSTEM - 25",
+    slide: <img src={slide25} className={`${styles.slides}`} alt="Slide 25" />,
+  },
+  {
+    id: 26,
+    label: "DIGESTIVE SYSTEM - 26",
+    slide: <img src={slide26} className={`${styles.slides}`} alt="Slide 26" />,
+  },
+  {
+    id: 27,
+    label: "DIGESTIVE SYSTEM - 27",
+    slide: <img src={slide27} className={`${styles.slides}`} alt="Slide 27" />,
+  },
+  {
+    id: 28,
+    label: "DIGESTIVE SYSTEM - 28",
+    slide: <img src={slide28} className={`${styles.slides}`} alt="Slide 28" />,
+  },
+  {
+    id: 29,
+    label: "DIGESTIVE SYSTEM - 29",
+    slide: <img src={slide29} className={`${styles.slides}`} alt="Slide 29" />,
+  },
+  {
+    id: 30,
+    label: "DIGESTIVE SYSTEM - 30",
+    slide: <img src={slide30} className={`${styles.slides}`} alt="Slide 30" />,
+  },
+  {
+    id: 31,
+    label: "DIGESTIVE SYSTEM - 31",
+    slide: <img src={slide31} className={`${styles.slides}`} alt="Slide 31" />,
+  },
+  {
+    id: 32,
+    label: "DIGESTIVE SYSTEM - 32",
+    slide: <img src={slide32} className={`${styles.slides}`} alt="Slide 32" />,
+  },
+];

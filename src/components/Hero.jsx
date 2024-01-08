@@ -3,6 +3,8 @@ import { styles } from "../styles";
 import { data } from "../data";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import doc from "../assets/doc.svg";
+import threeD from "../assets/3d.svg";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -31,7 +33,7 @@ const Hero = () => {
           showIndicators={false}
           showStatus={false}
           showThumbs={false}
-          className={`${styles.flexCenter} flex-col absolute top-0 z-0 h-full`}
+          className={`${styles.flexCenter} flex-col absolute top-0 z-0 w-full h-full`}
           selectedItem={currentSlide}
           onChange={handleSlideChange}
         >
@@ -50,10 +52,10 @@ const Hero = () => {
         </div>
         
         <div 
-          className={`${styles.text2} absolute w-full bottom-0 z-20 p-4 cursor-pointer`}
+          className={`${styles.text2} absolute w-full  bottom-0 z-20 p-4 cursor-pointer`}
           onClick={toggleLabelsList}
         >
-          <div className={` fixed bottom-3 w-[30rem] rounded-md text-left ${showLabelsList ? 'h-[20rem]' : 'h-[2.5rem]'}
+          <div className={` fixed  bottom-3 w-[90%] max-w-[30rem] rounded-md text-left ${showLabelsList ? 'h-[20rem]' : 'h-[2.5rem]'}
           ${showLabelsList ? 'bg-white' : 'bg-white/10'}
           ${showLabelsList ? 'overflow-y-scroll' : 'overflow-hidden'} ` } >
             {showLabelsList && data.map((item, index) => (
@@ -63,7 +65,9 @@ const Hero = () => {
                  ${index === currentSlide ? 'text-blue-500' : ''}`}
                 onClick={() => { scrollToSlide(index); }}
               >
-               <span className={`mr-[1rem]`}>{item.id}</span>
+              <img src={item.id === 2 || item.id === 3 || item.id === 7 || item.id === 12 || item.id === 24 ? threeD : doc} alt="" />
+
+               <span className={`mx-[1rem]`}>{item.id}</span>
                 {item.label}
               </button>
             ))}
