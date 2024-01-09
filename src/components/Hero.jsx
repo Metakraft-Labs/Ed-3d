@@ -4,31 +4,45 @@ import { data } from "../data";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import doc from "../assets/doc.svg";
+import fullscreen from "../assets/fullscreen.svg";
 import threeD from "../assets/3d.svg";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  // const [showLabels, setShowLabels] = useState(false);
   const [showLabelsList, setShowLabelsList] = useState(false); 
 
   const handleSlideChange = (index) => {
     setCurrentSlide(index);
   };
 
+  const toggleFullScreen = () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch((e) => {
+        console.error(`Error attempting to enable full-screen mode: ${e.message} (${e.name})`);
+      });
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+    }
+  };
+
   const scrollToSlide = (index) => {
     setCurrentSlide(index);
-    setShowLabelsList(false); // Hide labels list when a label is clicked
+    setShowLabelsList(false); 
   };
 
   const toggleLabelsList = () => {
-    setShowLabelsList(!showLabelsList); // Toggle labels list
+    setShowLabelsList(!showLabelsList); 
   };
 
   return (
     <>
       <div className={`${styles.flexCenter} flex-col w-full h-screen relative object-cover`}>
       
-
+      <div className={`absolute z-50 top-[1rem] right-[1rem] p-[0.4rem] bg-white rounded-lg`} onClick={toggleFullScreen}>
+          <img src={fullscreen} alt="fullscreen" />
+        </div>
         <Carousel
           showIndicators={false}
           showStatus={false}
@@ -44,9 +58,9 @@ const Hero = () => {
           ))}
         </Carousel>
 
-        <div className={`${styles.text2} absolute w-full bottom-[0rem] z-10 p-[2rem] bg-white`}>
-          <div className="text-left fixed bottom-[1.3rem] z-30"> 
-            <span className={`mr-[1rem]`}>{data[currentSlide].id}</span>
+        <div className={`${styles.text2} flex flex-row  absolute w-full bottom-[0rem] z-10 p-[1rem] bg-white`}>
+            <div className={`mr-[1rem]`}>{data[currentSlide].id}</div>
+          <div className="text-left static bottom-[1.3rem] z-30"> 
             {data[currentSlide].label}
           </div>
         </div>

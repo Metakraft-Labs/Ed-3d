@@ -17,11 +17,27 @@
 
 .carousel .control-arrow {
   background-color: #201e1e !important;
-  color: rgba(0, 0, 0, 0.155) !important; 
   padding: 10px;
-  opacity: 10; 
+  opacity: 0.1; 
 }
 
 .carousel .control-arrow:hover {
-  background-color: #1b19191f; /* Darker color on hover */
+  background-color: #6161611f; /* Darker color on hover */
+  opacity: 0.5; 
 }
+
+
+.fullScreenOverlay {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  background-color: rgba(255, 255, 255, 0.5); 
+  z-index: 1000;
+}
+
+

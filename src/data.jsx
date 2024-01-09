@@ -24,21 +24,8 @@ import slide29 from "./assets/slide29.jpeg";
 import slide30 from "./assets/slide30.jpeg";
 import slide31 from "./assets/slide31.jpeg";
 import slide32 from "./assets/slide32.jpeg";
-import { Stats, OrbitControls, Circle } from "@react-three/drei";
-import { Canvas, useLoader } from "@react-three/fiber";
-import { GLTFLoader } from "three/addons/loaders/GLTFLoader";
-import slide2 from "./assets/slide2.glb";
-import slide3 from "./assets/slide3.glb";
-import slide7 from "./assets/slide7.glb";
-import slide12 from "./assets/slide12.glb";
 
 import { styles } from "./styles";
-
-const gltf1 = useLoader(GLTFLoader, slide2);
-const gltf2 = useLoader(GLTFLoader, slide3);
-const gltf3 = useLoader(GLTFLoader, slide7);
-const gltf4 = useLoader(GLTFLoader, slide12);
-const gltf5 = useLoader(GLTFLoader, slide12);
 
 export const data = [
   {
@@ -47,7 +34,7 @@ export const data = [
     slide: (
       <div className={`${styles.flexCenter} h-screen`}>
         <img
-          className={`absolute top-0 left-0 z-0`}
+          className={`absolute object-cover h-full w-full top-0 left-0 z-0`}
           src={`https://portal.perceiv.io/biology.e4b24cadadf2b6c3.jpg`}
           alt=""
         />
@@ -56,7 +43,7 @@ export const data = [
         >
           <h2 className={`${styles.head1} `}>Biology</h2>
           <h1 className={`${styles.head2} m-[2rem]`}>
-            Detailed Study of Alimentary <br /> canal: Human Digestive System
+            Detailed Study of Alimentary <br className="hidden sm:flex" /> canal: Human Digestive System
           </h1>
           <p className={`${styles.text1}`}>Grade 11th</p>
         </div>
@@ -66,63 +53,13 @@ export const data = [
   {
     id: 2,
     label: "Location of Digestive System in Human Body",
-    slide: (
-      <>
-        <Canvas
-          camera={{ position: [-0.5, 1, 2] }}
-          shadows
-          style={{ height: "600px" }}
-        >
-          <directionalLight
-            position={[3.3, 1.0, 4.4]}
-            castShadow
-            intensity={Math.PI * 2}
-          />
-          <primitive
-            object={gltf1.scene}
-            position={[0, 1, 0]}
-            children-0-castShadow
-          />
-          <Circle args={[10]} rotation-x={-Math.PI / 2} receiveShadow>
-            <meshStandardMaterial />
-          </Circle>
-          <OrbitControls target={[0, 1, 0]} />
-          <axesHelper args={[5]} />
-          <Stats />
-        </Canvas>
-      </>
-    ),
+    slide: <>slide2</>,
   },
 
   {
     id: 3,
     label: "Human Digestive System",
-    slide: (
-      <div>
-        <Canvas
-          camera={{ position: [-0.5, 1, 2] }}
-          shadows
-          style={{ height: "600px" }}
-        >
-          <directionalLight
-            position={[3.3, 1.0, 4.4]}
-            castShadow
-            intensity={Math.PI * 2}
-          />
-          <primitive
-            object={gltf2.scene}
-            position={[0, 1, 0]}
-            children-0-castShadow
-          />
-          <Circle args={[10]} rotation-x={-Math.PI / 2} receiveShadow>
-            <meshStandardMaterial />
-          </Circle>
-          <OrbitControls target={[0, 1, 0]} />
-          <axesHelper args={[5]} />
-          <Stats />
-        </Canvas>
-      </div>
-    ),
+    slide: <div>slide3</div>,
   },
 
   {
@@ -143,32 +80,7 @@ export const data = [
   {
     id: 7,
     label: "Human Teeth",
-    slide: (
-      <>
-        <Canvas
-          camera={{ position: [-0.5, 1, 2] }}
-          shadows
-          style={{ height: "600px" }}
-        >
-          <directionalLight
-            position={[3.3, 1.0, 4.4]}
-            castShadow
-            intensity={Math.PI * 2}
-          />
-          <primitive
-            object={gltf3.scene}
-            position={[0, 1, 0]}
-            children-0-castShadow
-          />
-          <Circle args={[10]} rotation-x={-Math.PI / 2} receiveShadow>
-            <meshStandardMaterial />
-          </Circle>
-          <OrbitControls target={[0, 1, 0]} />
-          <axesHelper args={[5]} />
-          <Stats />
-        </Canvas>
-      </>
-    ),
+    slide: <>slide7</>,
   },
   {
     id: 8,
@@ -193,32 +105,7 @@ export const data = [
   {
     id: 12,
     label: "Tooth Cross Section",
-    slide: (
-      <>
-        <Canvas
-          camera={{ position: [-0.5, 1, 2] }}
-          shadows
-          style={{ height: "600px" }}
-        >
-          <directionalLight
-            position={[3.3, 1.0, 4.4]}
-            castShadow
-            intensity={Math.PI * 2}
-          />
-          <primitive
-            object={gltf4.scene}
-            position={[0, 1, 0]}
-            children-0-castShadow
-          />
-          <Circle args={[10]} rotation-x={-Math.PI / 2} receiveShadow>
-            <meshStandardMaterial />
-          </Circle>
-          <OrbitControls target={[0, 1, 0]} />
-          <axesHelper args={[5]} />
-          <Stats />
-        </Canvas>
-      </>
-    ),
+    slide: <>slide12</>,
   },
   {
     id: 13,
@@ -278,32 +165,7 @@ export const data = [
   {
     id: 24,
     label: "Villi Cross Section",
-    slide: (
-      <>
-        <Canvas
-          camera={{ position: [-0.5, 1, 2] }}
-          shadows
-          style={{ height: "600px" }}
-        >
-          <directionalLight
-            position={[3.3, 1.0, 4.4]}
-            castShadow
-            intensity={Math.PI * 2}
-          />
-          <primitive
-            object={gltf5.scene}
-            position={[0, 1, 0]}
-            children-0-castShadow
-          />
-          <Circle args={[10]} rotation-x={-Math.PI / 2} receiveShadow>
-            <meshStandardMaterial />
-          </Circle>
-          <OrbitControls target={[0, 1, 0]} />
-          <axesHelper args={[5]} />
-          <Stats />
-        </Canvas>
-      </>
-    ),
+    slide: <>slide24</>,
   },
   {
     id: 25,
