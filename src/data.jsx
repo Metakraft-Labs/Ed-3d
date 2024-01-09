@@ -47,7 +47,7 @@ export const data = [
         >
           <h2 className={`${styles.head1} `}>Biology</h2>
           <h1 className={`${styles.head2} m-[2rem]`}>
-            Detailed Study of Alimentary <br className="hidden sm:flex" /> canal: Human Digestive System
+            Detailed Study of Alimentary <br className="hidden lg:flex" /> canal: Human Digestive System
           </h1>
           <p className={`${styles.text1}`}>Grade 11th</p>
         </div>

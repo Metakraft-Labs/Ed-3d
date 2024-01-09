@@ -15,16 +15,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.carousel .control-arrow {
+/* .carousel .control-arrow {
   background-color: #201e1e !important;
   padding: 10px;
   opacity: 0.1; 
 }
 
 .carousel .control-arrow:hover {
-  background-color: #6161611f; /* Darker color on hover */
+  background-color: #6161611f; 
   opacity: 0.5; 
-}
+} */
 
 
 .fullScreenOverlay {
