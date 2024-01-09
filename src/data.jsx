@@ -24,10 +24,10 @@ import slide29 from "./assets/slide29.jpeg";
 import slide30 from "./assets/slide30.jpeg";
 import slide31 from "./assets/slide31.jpeg";
 import slide32 from "./assets/slide32.jpeg";
-import slide2 from "./assets/slide2.glb";
+import slide2 from "./assets/slide22.glb";
 import slide3 from "./assets/slide3.glb";
 import slide7 from "./assets/slide7.glb";
-import slide12 from "./assets/slide12.glb";
+import slide12 from "./assets/slide122.glb";
 import slide24 from "./assets/slide24.glb";
 
 import { styles } from "./styles";
