@@ -1,4 +1,4 @@
-import React from "react";
+import Scene from "./components/Scene";
 import slide4 from "./assets/slide4.jpeg";
 import slide5 from "./assets/slide5.jpeg";
 import slide6 from "./assets/slide6.jpeg";
@@ -24,6 +24,10 @@ import slide29 from "./assets/slide29.jpeg";
 import slide30 from "./assets/slide30.jpeg";
 import slide31 from "./assets/slide31.jpeg";
 import slide32 from "./assets/slide32.jpeg";
+import slide2 from "./assets/slide2.glb";
+import slide3 from "./assets/slide3.glb";
+import slide7 from "./assets/slide7.glb";
+import slide12 from "./assets/slide12.glb";
 
 import { styles } from "./styles";
 
@@ -53,13 +57,17 @@ export const data = [
   {
     id: 2,
     label: "Location of Digestive System in Human Body",
-    slide: <>slide2</>,
+    slide: (
+      <Scene scene={slide2} />
+    ),
   },
 
   {
     id: 3,
     label: "Human Digestive System",
-    slide: <div>slide3</div>,
+    slide: (
+      <Scene scene={slide3} />
+    ),
   },
 
   {
@@ -80,7 +88,9 @@ export const data = [
   {
     id: 7,
     label: "Human Teeth",
-    slide: <>slide7</>,
+    slide: (
+      <Scene scene={slide7} />
+    ),
   },
   {
     id: 8,
@@ -105,7 +115,9 @@ export const data = [
   {
     id: 12,
     label: "Tooth Cross Section",
-    slide: <>slide12</>,
+    slide: (
+      <Scene scene={slide12} />
+    ),
   },
   {
     id: 13,
@@ -165,7 +177,9 @@ export const data = [
   {
     id: 24,
     label: "Villi Cross Section",
-    slide: <>slide24</>,
+    slide: (
+      <Scene scene={slide12} />
+    ),
   },
   {
     id: 25,

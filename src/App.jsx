@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Hero from "./components/Hero";
-import Sample from "./components/Sample";
 import CircularProgress from "@mui/joy/CircularProgress";
 
 const App = () => {
@@ -22,7 +21,6 @@ const App = () => {
         </div>
       )}
       <Hero />
-      <Sample />
     </div>
   );
 };
