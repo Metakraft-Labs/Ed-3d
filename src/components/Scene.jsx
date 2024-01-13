@@ -20,6 +20,7 @@ export default function Scene({ scene }) {
         object={gltf.scene}
         position={[0, 1, 0]}
         children-0-castShadow
+        scale={2}
       />
       <Circle args={[10]} rotation-x={-Math.PI / 2} receiveShadow>
         <meshStandardMaterial />
